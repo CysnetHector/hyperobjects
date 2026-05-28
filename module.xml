@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="IRIS" version="25">
+	<Document name="cysnet-virtualizationLoop.ZPM">
+		<Module>
+			<Name>cysnet-virtualizationLoop</Name>
+			<Version>1.0.15</Version>
+			<Packaging>module</Packaging>
+			<SourcesRoot>src</SourcesRoot>
+			<Description>Cysnet Virtualization Loop</Description>
+			<Dependencies>
+				<ModuleReference>
+					<Name>cysnet-syncEngine</Name>
+					<Version>1.0.13</Version>
+				</ModuleReference>
+			</Dependencies>
+			<Author>
+				<Organization>Cysnet Software</Organization>
+				<CopyrightDate>2023</CopyrightDate>
+			</Author>
+		</Module>
+	</Document>
+</Export>

@@ -1,0 +1,7 @@
+{
+    "objectscript.conn": {
+        "server": "virtualization_loop",
+        "ns": "VIRTUALIZATION_LOOP",
+        "active": true
+    }
+}

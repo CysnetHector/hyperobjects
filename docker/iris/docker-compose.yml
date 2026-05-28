@@ -1,0 +1,43 @@
+version: '3.6'
+services:
+  irishealth:
+    init: true
+    build:
+      context: .
+      dockerfile: irishealth/Dockerfile
+    hostname: irishealth
+    container_name: irishealth
+    restart: always
+    ports: 
+      - 1972:1972
+    command: 
+      - --check-caps false
+      - --password-file /irishealth-shared/pass.txt
+    volumes: 
+      - type: bind
+        source: ./irishealth/shared
+        target: /irishealth-shared
+    environment:
+      - ISC_DATA_DIRECTORY=/irishealth-shared/iris
+
+# web gateway container
+  webgateway:
+    init: true
+    container_name: webgateway
+    build:
+      context: .
+      dockerfile: webgateway/Dockerfile
+    hostname: webgateway
+    restart: always
+    ports:
+    - "8880:80"
+    - "8443:443"
+    environment:
+    - ISC_DATA_DIRECTORY=/webgateway-shared/durable
+    - ISC_CSP_CONF_FILE=/webgateway-shared/CSP.conf
+    - ISC_CSP_INI_FILE=/webgateway-shared/CSP.ini
+    volumes:
+    - ./webgateway/shared:/webgateway-shared
+    depends_on:
+    - irishealth
+    

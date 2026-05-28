@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "open_vir_loop:OPENSOURCE (read-only)",
+			"uri": "isfs-readonly://open_vir_loop:opensource/"
+		}
+	],
+	"settings": {}
+}
